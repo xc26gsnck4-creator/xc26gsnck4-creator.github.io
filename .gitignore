@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Planning/notes (not part of the CV)
+resume-guide.md
+resume seo.md
+
+# Logs
+*.log
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo

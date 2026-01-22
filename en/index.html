@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="description" content="Senior Laravel developer with 15+ years PHP experience specializing in legacy code modernization and system migration. Based in Wroclaw, Poland.">
+  <link rel="canonical" href="https://hubertjedrzejek.pl/en/">
+  <link rel="alternate" hreflang="en" href="https://hubertjedrzejek.pl/en/">
+  <link rel="alternate" hreflang="pl" href="https://hubertjedrzejek.pl/pl/">
+  <link rel="alternate" hreflang="x-default" href="https://hubertjedrzejek.pl/en/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Hubert Jedrzejek | Senior Laravel Developer | PHP 15+ yrs">
+  <meta property="og:description" content="Senior Laravel developer with 15+ years PHP experience specializing in legacy code modernization and system migration. Based in Wroclaw, Poland.">
+  <meta property="og:url" content="https://hubertjedrzejek.pl/en/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hubert Jedrzejek | Senior Laravel Developer">
+  <meta name="twitter:description" content="Senior Laravel developer with 15+ years PHP experience specializing in legacy code modernization.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Hubert Jedrzejek | Senior Laravel Developer | PHP 15+ yrs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+  /********************************************
+* 	reset from
+* 	http://meyerweb.com/eric/tools/css/reset/
+*******************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/****************
+*	COMMONS
+****************/
+
+body,
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 13px;
+  color: #40484f;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.46153846;
+  text-align: left;
+}
+
+p {
+  display: block;
+}
+
+a {
+  color: #0095ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0c65a5;
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 1.3em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.67rem;
+}
+
+h3 {
+  font-size: 1.27rem;
+}
+
+em {
+  color: #757575;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* main container */
+
+#resume {
+  padding: 1.5rem;
+}
+
+/* every section wrapper */
+
+.section {
+  margin-bottom: 1rem;
+}
+
+section .location {
+  margin-right: 0.5em;
+  color: #606d76;
+  font-weight: 700;
+}
+
+#contact {
+  margin-top: 0.5rem;
+}
+
+#profiles .item {
+  padding: 0;
+}
+
+#header > #profiles,
+#header > #contact,
+#skills,
+#languages,
+#interests {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+#header > div {
+  line-height: 1.5;
+}
+
+#header > div > div {
+  margin-right: 1.2em;
+}
+
+#header h1.name {
+  font-size: 2.8rem;
+  font-weight: 100;
+  line-height: 100%;
+}
+
+#header h2.label {
+  color: #202931;
+  font-size: 1.47rem;
+  font-weight: 300;
+}
+
+#header .image {
+  width: 11em;
+  float: right;
+  border-radius: 4px;
+}
+
+.section.summary header {
+  margin-top: 1rem;
+}
+
+.main-summary {
+  background: #f1f8ff;
+  padding: 1.2em 1em;
+}
+
+.main-summary p {
+  margin: 0;
+}
+
+.section-title {
+  display: inline-block;
+  background: #fff;
+  padding: 0 1em 0.3em 0;
+  color: #ff6d1f;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.section > header {
+  position: relative;
+}
+
+.fa {
+  margin-right: 0.25em;
+}
+
+.section > header::after {
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  height: 1px;
+  background: #ccc;
+  content: "";
+  width: 100%;
+  z-index: -100;
+  display: block;
+}
+
+.section.main-summary > section {
+  margin: 0;
+}
+
+.section > section > header {
+  font-size: 1.38rem;
+  position: relative;
+  margin-top: 0.7em;
+}
+
+.section > section > header:first-of-type {
+  margin: 0;
+}
+
+.section > section > header .space-left {
+  position: absolute;
+  left: -1.56rem;
+  top: 5px;
+  color: #aaa;
+  line-height: 1;
+  opacity: 0;
+}
+
+.position,
+.company,
+.organization,
+.institution,
+.date,
+.area,
+.studyType,
+.title,
+.awarder {
+  display: inline;
+}
+
+.position,
+.studyType,
+.area,
+.title,
+.language,
+.name {
+  font-weight: 600;
+}
+
+.company::before,
+.institution::before,
+.organization::before,
+.awarder::before {
+  content: "at ";
+}
+
+.company,
+.institution,
+.organization,
+.awarder {
+  color: #606d76;
+  font-weight: 400;
+}
+
+.section header .date {
+  display: block;
+  font-size: 1rem;
+  padding: 0.1em 0;
+  color: #606d76;
+  font-weight: 400;
+}
+
+.keywords,
+.courses {
+  margin: 0.5em 0;
+}
+
+.keywords li,
+.courses li {
+  display: inline-block;
+  margin: 2px 2px 2px 0;
+  padding: 4px 5px 5px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #3e6d8e;
+  background-color: #dfeaf1;
+  border: 0 solid #dfeaf1;
+  white-space: nowrap;
+}
+
+.keywords li:hover,
+.courses li:hover {
+  background: #dfeaf0;
+}
+
+.highlights {
+  margin: 1em 0 0 0;
+}
+
+.highlights > li > p {
+  margin-bottom: 0.5em;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.gpa {
+  clear: both;
+  padding-bottom: 0.5em;
+}
+
+.fa.social {
+  font-size: 1.1em;
+}
+
+/* Social Media Brand Colors */
+
+.google-plus {
+  color: #dd4b39;
+}
+
+.tumblr {
+  color: #32506d;
+}
+
+.foursquare {
+  color: #0072b1;
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.linkedin {
+  color: #007bb6;
+}
+
+.pinterest {
+  color: #cb2027;
+}
+
+.dribbble {
+  color: #ea4c89;
+}
+
+.instagram {
+  color: #517fa4;
+}
+
+.twitter {
+  color: #00aced;
+}
+
+.soundcloud {
+  color: #ff3a00;
+}
+
+.wordpress {
+  color: #21759b;
+}
+
+.youtube {
+  color: #bb0000;
+}
+
+.github {
+  color: #171515;
+}
+
+.stack-overflow {
+  color: #828386;
+  position: relative;
+}
+
+.flickr {
+  color: #ff0084;
+}
+
+.reddit {
+  color: #ff4500;
+}
+
+.hacker-news {
+  color: #ff6600;
+}
+
+.stack-overflow::after {
+  position: absolute;
+  left: 0;
+  content: "\f16c";
+  color: #f68a1f;
+  overflow: hidden;
+  height: 100%;
+}
+
+.telegram {
+  color: #2291c3;
+}
+
+#languages .item,
+#skills .item,
+#interests .item {
+  width: 15em;
+  padding: 0 0.5em 0.5em 0;
+  border-bottom: none;
+}
+
+#skills .item {
+  width: 16em;
+}
+
+#skills .item .keywords {
+  width: 15em;
+}
+
+/* Skill chart */
+
+.level {
+  margin-bottom: 0.5em;
+}
+
+.level em {
+  padding-left: 0.2em;
+}
+
+.level .bar {
+  border: 1px solid #ddd;
+  display: block;
+  width: 10em;
+  height: 5px;
+  position: relative;
+}
+
+.level .bar::after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  background: black;
+  height: 5px;
+}
+
+.level.beginner .bar::after {
+  background: #eb5f51;
+  width: 2.5em;
+}
+
+.level.intermediate .bar::after {
+  background: #ffdf1f;
+  width: 5em;
+}
+
+.level.advanced .bar::after,
+.level.fluent .bar::after {
+  background: #5cb85c;
+  width: 7.5em;
+}
+
+.level.master .bar::after,
+.level.native.speaker .bar::after {
+  background: #59c596;
+  width: 10em;
+}
+
+#references .item {
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  border-left: 5px solid #ff6d1f;
+}
+
+.section > section > section {
+  margin-bottom: 1rem;
+}
+
+/******************
+*	HELPER CLASSES
+******************/
+
+.clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.display {
+  display: block;
+  opacity: 1 !important;
+}
+
+/****************
+*		TABLET
+****************/
+
+@media screen and (min-width: 602px) {
+  #resume {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .section header .date {
+    float: right;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+/****************
+*		LAPTOP
+****************/
+
+@media screen and (min-width: 1025px) {
+  li {
+    margin-left: 1.5em;
+  }
+  #resume {
+    width: 820px;
+    margin: 2rem auto;
+  }
+  .section > section > header .space-left {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .section > section:not(.main-summary) {
+    margin-left: 1.67rem;
+  }
+  .company::before,
+  .institution::before,
+  .organization::before,
+  .awarder::before {
+    content: "| ";
+  }
+  .header-left {
+    float: left;
+    width: 70%;
+    word-break: normal;
+  }
+  .section header .date {
+    padding: 0.2em;
+  }
+  .display {
+    display: none;
+  }
+  .display:not(.none) {
+    display: block;
+  }
+}
+
+@media print {
+  #profiles a:not(.hide-href-print)::after{
+    content: " (" attr(href) ") ";
+  }
+  #profiles .url .show-only-url-print {
+    display: none;
+  }
+  #profiles .url a::after {
+    content: attr(href);
+  }
+  #resume {
+    margin: 0.1em;
+    padding: 0.1em;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.25;
+  }
+  @page {
+    margin: 1cm 1.4cm;
+  }
+  .item-count {
+    display: none;
+  }
+  .company a {
+    color: #40484f;
+  }
+  .company::before,
+  .institution::before,
+  .organization::before,
+  .awarder::before {
+    content: "at ";
+  }
+  .main-summary {
+    padding: 0;
+    background: transparent;
+  }
+  .section {
+    margin: 0.8rem 0;
+    padding: 0;
+  }
+  .section header {
+    padding-bottom: 0.15rem;
+  }
+  .section .location {
+    padding-bottom: 0.15rem;
+  }
+  .section > section > section {
+    border-bottom: 1px solid #fdfdfd;
+    margin: .5em 0;
+  }
+  .section > section > section:last-of-type {
+    margin: 0;
+  }
+  .stack-overflow::after {
+    content: "";
+  }
+  .fa.social {
+    color: #828386;
+  }
+  ul {
+    margin-top: 0.4em;
+  }
+  ul,
+  li {
+    padding: 0;
+  }
+  ul.keywords li,
+  ul.courses li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    background: transparent;
+  }
+  ul.keywords li::after,
+  ul.courses li::after {
+    padding: 0 0 0 0.1rem;
+    content: ", ";
+  }
+  ul.keywords::before,
+  ul.courses::before {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  #skills .item {
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem 0;
+    padding: 0;
+  }
+  #skills .level {
+    margin: 0.1rem 0;
+    font-weight: 400;
+  }
+  #skills .keywords {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .highlights {
+    margin: 0.5em 0 0 0;
+  }
+  .highlights > li > p {
+    margin-bottom: 0.3em;
+  }
+  ul.keywords::before {
+    content: "Skills: ";
+    font-size: 1rem;
+  }
+  #skills .keywords::before {
+    content: none;
+  }
+  .section p {
+    margin: 0;
+    padding: 0;
+  }
+  ul.courses::before {
+    content: "Major courses: ";
+    font-size: 1rem;
+  }
+  ul.keywords li,
+  ul.courses li {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  ul.keywords li:last-of-type::after,
+  ul.courses li:last-of-type::after {
+    content: "";
+  }
+  .level em {
+    font-style: normal;
+    padding: 0.1em 0;
+  }
+  .level .bar {
+    display: none;
+  }
+  #profiles .item {
+    padding: 0;
+  }
+  .item.display {
+    display: block;
+    opacity: 1 !important;
+  }
+  .fa-location-dot:before {
+    padding-left: 0.1em;
+  }
+}
+
+  </style>
+  
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Hubert Jedrzejek","jobTitle":"Senior Laravel Developer","url":"https://hubertjedrzejek.pl","sameAs":["https://linkedin.com/in/hubertjedrzejek"],"knowsAbout":["PHP","Laravel","Legacy Code Modernization","System Migration","Lumen","REST API","MySQL"],"address":{"@type":"PostalAddress","addressLocality":"Wroclaw","addressRegion":"Lower Silesia","addressCountry":"PL"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Zend Framework: Advanced Course","credentialCategory":"certification"},{"@type":"EducationalOccupationalCredential","name":"Zend Framework: Fundamentals Course","credentialCategory":"certification"},{"@type":"EducationalOccupationalCredential","name":"MS: Programming in HTML5 with JavaScript and CSS3","credentialCategory":"certification"},{"@type":"EducationalOccupationalCredential","name":"MCTS: SQL Server 2008, Database Development","credentialCategory":"certification"},{"@type":"EducationalOccupationalCredential","name":"MCITP: Database Administrator 2008","credentialCategory":"certification"},{"@type":"EducationalOccupationalCredential","name":"MCTS: SQL Server 2008, Implementation and Maintenance","credentialCategory":"certification"}]}</script>
+  </head>
+  <body>
+  
+  <div id="resume">
+    	<header id="header" class="clear">
+    		<div>
+    			<h1 class="name">Hubert Jędrzejek</h1>
+    			<h2 class="label">Senior Laravel Developer | Legacy Code Modernization | 15+ Years in PHP</h2>
+    		</div>
+    
+    		<span class="location">
+    			<span class="city">Wrocław,</span>
+    			<span class="region">Lower Silesia</span>
+    			<span class="countryCode">(PL)</span>
+    		</span>
+    
+    
+    		<div id="contact">
+    		</div>
+    
+    		<div id="profiles">
+    			<div class="item">
+    				<div class="username">
+    					<span class="fa-brands fa-linkedin linkedin social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://linkedin.com/in/hubertjedrzejek"><span class="show-only-url-print">hubertjedrzejek</span></a>
+    					</span>
+    				</div>
+    			</div>
+    		</div>
+    	</header>
+    
+    	<section class="section summary">
+        <header>
+          <h2 class="section-title">summary</h2>
+        </header>
+    		<section class="main-summary">
+    			<div><p><p>Senior Laravel developer with over 15 years of PHP experience. I modernize legacy systems — incrementally, without risky full rewrites.</p></p><p><p>Most legacy projects don't need to be rebuilt from scratch. They need someone who can step-by-step modernize them, reduce technical debt, and deliver value along the way. That's exactly what I do.</p></p><p><p>Currently working on migrating RPG/AS400 systems to Laravel. Previously transformed Drupal applications into modern, maintainable solutions. Different starting points, same approach: practical modernization that works with the framework.</p></p></div>
+    		</section>
+    	</section>
+    
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Skills</h2>
+      </header>
+      <section id="skills">
+        <div class="item">
+          <h3 class="name">
+            PHP
+          </h3>
+            <div class="level master">
+                <em>Master</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            Laravel
+          </h3>
+            <div class="level master">
+                <em>Master</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            Legacy Code Modernization
+          </h3>
+            <div class="level advanced">
+                <em>Advanced</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            System Migration
+          </h3>
+            <div class="level advanced">
+                <em>Advanced</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            Lumen
+          </h3>
+            <div class="level advanced">
+                <em>Advanced</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            REST API
+          </h3>
+            <div class="level intermediate">
+                <em>Intermediate</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            MySQL
+          </h3>
+            <div class="level intermediate">
+                <em>Intermediate</em>
+              <div class="bar"></div>
+            </div>
+        </div>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Work Experience <span class="item-count">(5)</span></h2>
+      </header>
+    
+      <section id="work">
+        <section class="work-item">
+            <label for="work-item-0"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Mar 2023</span>
+                <span class="endDate">- Current</span>
+              </div>
+              <div class="position">Senior Laravel Developer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>Modernizing a 40-year-old mainframe system to Laravel for a US-based organization serving hundreds of thousands of users. The legacy system handled most operational processes with hundreds of millions of records.</p></p></div>
+            <ul class="highlights">
+              <li><p><p>Applying strangler fig pattern for gradual migration without downtime</p></p></li>
+              <li><p><p>Building data synchronization layer between old and new systems</p></p></li>
+              <li><p><p>Reverse engineering undocumented business logic through code and data analysis</p></p></li>
+              <li><p><p>Designing Laravel architecture for migrated modules</p></p></li>
+              <li><p><p>Maintaining operational continuity while replacing a critical system with no documentation or test environment</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-1"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Sep 2015</span>
+                <span class="endDate">- Mar 2023</span>
+              </div>
+              <div class="position">Senior PHP Developer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>Working across healthcare, automotive sectors and internal products. Laravel, Laravel Nova, Lumen, Java, Spring.</p></p></div>
+            <ul class="highlights">
+              <li><p><p>Built a sterilization verification management system from the ground up — shipment tracking, returns handling, integrations with payment providers, courier APIs, accounting systems</p></p></li>
+              <li><p><p>Migrated legacy Drupal application to Laravel in automotive sector</p></p></li>
+              <li><p><p>Built vehicle data processing layer handling both SOAP and REST APIs</p></p></li>
+              <li><p><p>Developed banking reporting tools (Java, Spring)</p></p></li>
+              <li><p><p>Implemented a library for managing multiple database systems</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-2"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Jul 2014</span>
+                <span class="endDate">- Dec 2014</span>
+              </div>
+              <div class="position">PHP Developer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>Workforce management system for a UK-based umbrella company serving temporary workers.</p></p></div>
+            <ul class="highlights">
+              <li><p><p>Employee payroll, insurance, tax settlements with HMRC</p></p></li>
+              <li><p><p>Daily job assignments management across multiple work sites</p></p></li>
+              <li><p><p>Built with Zend Framework</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-3"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Mar 2013</span>
+                <span class="endDate">- Jun 2014</span>
+              </div>
+              <div class="position">PHP Developer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>E-commerce development with PrestaShop and Zend Framework for a premium interior design online store.</p></p></div>
+            <ul class="highlights">
+              <li><p><p>Built backend features and custom modules</p></p></li>
+              <li><p><p>Developed integrations with Sales Manago for marketing automation</p></p></li>
+              <li><p><p>Participated in code reviews</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-4"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Mar 2011</span>
+                <span class="endDate">- Feb 2013</span>
+              </div>
+              <div class="position">PHP Developer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>Built IVR (Interactive Voice Response) applications using Asterisk and contributed to a B2B barter exchange platform.</p></p></div>
+            <ul class="highlights">
+              <li><p><p>Developed both frontend and backend for IVR applications</p></p></li>
+              <li><p><p>Created internal ExtJS component libraries</p></p></li>
+              <li><p><p>Built a marketplace for trading goods and services using virtual currency</p></p></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </section>
+      <section class="section">
+        <header>
+          <h2 class="section-title">Certificates</h2>
+        </header>
+        <section id="certificates">
+            <section class="certificate-item">
+              <header class="clear">
+                  <div class="date">
+                    Feb 2014
+                  </div>
+                <div class="header-left">
+                    <div class="name">
+                      Zend Framework: Advanced Course
+                    </div>
+                    <div class="issuer">
+                      Perforce Zend
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+              </div>
+            </section>
+            <section class="certificate-item">
+              <header class="clear">
+                  <div class="date">
+                    Feb 2014
+                  </div>
+                <div class="header-left">
+                    <div class="name">
+                      Zend Framework: Fundamentals Course
+                    </div>
+                    <div class="issuer">
+                      Perforce Zend
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+              </div>
+            </section>
+            <section class="certificate-item">
+              <header class="clear">
+                  <div class="date">
+                    Dec 2012
+                  </div>
+                <div class="header-left">
+                    <div class="name">
+                      MS: Programming in HTML5 with JavaScript and CSS3
+                    </div>
+                    <div class="issuer">
+                      Microsoft
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+              </div>
+            </section>
+            <section class="certificate-item">
+              <header class="clear">
+                  <div class="date">
+                    May 2010
+                  </div>
+                <div class="header-left">
+                    <div class="name">
+                      MCTS: SQL Server 2008, Database Development
+                    </div>
+                    <div class="issuer">
+                      Microsoft
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+              </div>
+            </section>
+            <section class="certificate-item">
+              <header class="clear">
+                  <div class="date">
+                    Mar 2010
+                  </div>
+                <div class="header-left">
+                    <div class="name">
+                      MCITP: Database Administrator 2008
+                    </div>
+                    <div class="issuer">
+                      Microsoft
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+              </div>
+            </section>
+            <section class="certificate-item">
+              <header class="clear">
+                  <div class="date">
+                    Mar 2010
+                  </div>
+                <div class="header-left">
+                    <div class="name">
+                      MCTS: SQL Server 2008, Implementation and Maintenance
+                    </div>
+                    <div class="issuer">
+                      Microsoft
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+              </div>
+            </section>
+        </section>
+      </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Languages</h2>
+      </header>
+      <section id="languages">
+        <div class="display">
+          <h3 class="language">
+            Polish
+          </h3>
+          <div class="item">
+            <div class="level fluency native speaker">
+              <em>Native Speaker</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="display">
+          <h3 class="language">
+            English
+          </h3>
+          <div class="item">
+            <div class="level fluency fluent">
+              <em>Fluent</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </body>
+</html>
