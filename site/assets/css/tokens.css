@@ -1,0 +1,44 @@
+/* Kartka i terminal: tokeny jako zmienne CSS (źródło: design-system/tokens.json). */
+@font-face{font-family:"JetBrains Mono";src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("../fonts/JetBrainsMono-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("../fonts/InterVariable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+
+:root{
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --font-sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  /* motyw jasny (domyślny, źródło dla druku) */
+  --color-bg:#ffffff;
+  --color-fg:#000000;
+  --color-fg-muted:#555555;
+  --color-fg-subtle:#767676;
+  --color-rule:#e6e6e6;
+  --color-surface:#f2f2f2;
+  --color-accent:#2447f9;
+  --color-accent-hover:#1631c4;
+  --color-focus:var(--color-accent);
+
+  --space-4:4px;--space-8:8px;--space-12:12px;--space-16:16px;--space-24:24px;
+  --space-32:32px;--space-48:48px;--space-64:64px;--space-96:96px;
+  --radius-0:0;--radius-3:3px;--radius-4:4px;
+  --line-rule:1px;--line-underline:1px;--line-underline-offset:3px;--line-lang-underline:2px;
+  --line-focus:2px;--line-focus-offset:2px;
+  --layout-rail:260px;--layout-rail-top:32px;--layout-gutter:48px;--layout-content-max:640px;
+  --layout-container-max:1080px;--layout-margin-desktop:64px;--layout-margin-mobile:20px;
+  --layout-date-column:17ch;--layout-measure-max:68ch;--layout-photo:96px;--layout-photo-desktop:120px;
+  --layout-touch-target:44px;
+  --duration-hover:150ms;
+}
+
+/* motyw ciemny wybrany ręcznie (przełącznik); automatyczny za systemem obsługuje bundle.css */
+:root[data-theme="dark"]{
+  --color-bg:#0f172a;
+  --color-fg:#f1f5f9;
+  --color-fg-muted:#a3aec2;
+  --color-fg-subtle:#75839a;
+  --color-rule:#1e293b;
+  --color-surface:#172033;
+  --color-accent:#8fa8ff;
+  --color-accent-hover:#b7c6ff;
+  --color-focus:var(--color-accent);
+}

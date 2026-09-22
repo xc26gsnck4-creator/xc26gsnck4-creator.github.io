@@ -1,6 +1,0 @@
-services:
-  cv:
-    build: .
-    volumes:
-      - .:/cv
-    working_dir: /cv

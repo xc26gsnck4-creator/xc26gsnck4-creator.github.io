@@ -1,0 +1,56 @@
+/* Reguły strony hubertjedrzejek.pl spoza katalogu komponentów. Trzymaj krótko. */
+
+/* Hero na mobile: nazwisko i rola obok zdjęcia, lead i przyciski na całą szerokość. */
+@media (max-width: 639px) {
+  .cv-hero:has(.cv-hero__photo) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--layout-photo, 96px);
+    column-gap: var(--space-24);
+    row-gap: 0; /* .cv-hero ma gap 32 px z bundle; w siatce rytm dają marginesy */
+    align-items: start;
+  }
+  .cv-hero:has(.cv-hero__photo) .cv-hero__text { display: contents; }
+  .cv-hero:has(.cv-hero__photo) .cv-hero__lead,
+  .cv-hero:has(.cv-hero__photo) .cv-hero__contact,
+  .cv-hero:has(.cv-hero__photo) .cv-hero__actions { grid-column: 1 / -1; }
+  .cv-hero:has(.cv-hero__photo) .cv-hero__photo { grid-column: 2; grid-row: 1 / span 2; }
+}
+
+/* Certyfikaty: ciaśniejsze wpisy (tylko tytuł i wydawca). */
+.cv-entry--compact + .cv-entry--compact { margin-top: var(--space-16); }
+
+/* Rail: rytm 24 px między elementami (bundle zeruje margines .cv-rail__name po swojej regule). */
+.cv-rail > :not(:first-child) { margin-top: var(--space-24); }
+
+/* Poniżej 1024 px rail staje się paskiem: wordmark po lewej, PL / EN i motyw po prawej.
+   Nazwisko, nawigacja i kontakt z railu znikają (są w hero i w .cv-subnav pod hero). */
+@media (max-width: 1023px) {
+  .cv-rail { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-16); margin-bottom: var(--space-32); }
+  .cv-rail > :not(:first-child) { margin-top: 0; }
+  .cv-rail__name, .cv-rail__nav, .cv-rail > .cv-contact { display: none; }
+  .cv-subnav { margin-top: var(--space-32); }
+}
+@media (min-width: 1024px) {
+  .cv-subnav { display: none; }
+}
+@media print {
+  .cv-subnav { display: none; }
+}
+
+/* Motyw ciemny: zdjęcie bez zmian, ale bez białej obwódki z <img>. */
+.cv-hero__photo { display: block; }
+
+/* Druk / PDF: to samo HTML jako CV. Sekcja „Współpraca” to oferta na stronę, nie do CV. */
+@media print {
+  #wspolpraca, #working-together, .cv-hero__contact { display: none !important; }
+  /* Reguły < 1024 px działają też w druku (A4 jest węższe), więc rail wraca do postaci nagłówka dokumentu. */
+  .cv-rail { display: block; }
+  .cv-rail > .cv-contact { display: flex; }
+  .cv-rail > :not(:first-child) { margin-top: var(--space-8); }
+  /* W CV adres e-mail musi być widoczny; karta ContactRow przewiduje dopisek tylko dla http, tu dodajemy go z data-address. */
+  .cv-contact a[href^="mailto:"][data-address]::after { content: " (" attr(data-address) ")"; font-family: var(--font-mono); font-size: 9pt; }
+  .cv-entry__body, .cv-project__desc, .cv-skills__note, .cv-hero__lead, .cv-fine { max-width: none; }
+  .cv-entry { break-inside: auto; }
+  .cv-entry__title, .cv-entry__org { break-after: avoid; }
+  .cv-section { margin-top: var(--space-16); }
+}

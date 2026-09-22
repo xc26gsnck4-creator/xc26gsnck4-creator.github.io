@@ -1,0 +1,276 @@
+/* Kartka i terminal — komponenty CSS (prefiks cv-). Bez JavaScriptu.
+   Wymaga tokens.css (zmienne --color-*, --space-*, --radius-*, --line-*, --layout-*, --duration-*, --font-mono, --font-sans). */
+
+/* Motyw automatyczny: gdy strona nie ustawia data-theme, ciemny idzie za systemem.
+   Wartości są kopią motywu „dark” z tokens.json — zmieniając tam, zmień i tu. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #0f172a;
+    --color-fg: #f1f5f9;
+    --color-fg-muted: #a3aec2;
+    --color-fg-subtle: #75839a;
+    --color-rule: #1e293b;
+    --color-surface: #172033;
+    --color-accent: #8fa8ff;
+    --color-accent-hover: #b7c6ff;
+    --color-focus: var(--color-accent);
+  }
+}
+
+/* Baza */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 26px;
+  font-variant-ligatures: none;
+  hyphens: auto;
+  text-align: left;
+}
+*, *::before, *::after { box-sizing: border-box; box-shadow: none; }
+h1, h2, h3, h4 { hyphens: manual; }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: var(--line-focus, 2px) solid var(--color-focus); outline-offset: var(--line-focus-offset, 2px); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+.cv-mono { font-family: var(--font-mono); font-variant-ligatures: none; font-variant-numeric: tabular-nums; }
+
+/* 4.11 Link */
+.cv-link, .cv-prose a, .cv-contact a, .cv-entry__org a, .cv-project__title a, .cv-colophon a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: var(--line-underline-offset, 3px);
+  text-decoration-thickness: var(--line-underline, 1px);
+  transition: color var(--duration-hover, 150ms);
+}
+.cv-link:hover, .cv-prose a:hover, .cv-contact a:hover, .cv-entry__org a:hover, .cv-project__title a:hover, .cv-colophon a:hover { color: var(--color-accent-hover); }
+
+/* 4.1 Wordmark */
+.cv-wordmark {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-fg);
+  text-decoration: none;
+  font-variant-ligatures: none;
+}
+.cv-wordmark__accent { color: var(--color-accent); }
+
+/* 4.3 Wiersz kontaktu */
+.cv-contact { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); margin: 0; padding: 0; list-style: none; font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-variant-ligatures: none; }
+.cv-contact__icon { width: 16px; height: 16px; vertical-align: -3px; margin-right: var(--space-4); color: var(--color-fg-subtle); }
+.cv-contact__phone { display: none; }
+:lang(pl) .cv-contact__phone { display: inline; }
+
+/* 4.2 Hero */
+.cv-hero { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-32); text-align: left; }
+.cv-hero__text { min-width: 0; flex: 1 1 auto; }
+.cv-hero__name {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-variant-ligatures: none;
+}
+.cv-hero__role { margin: var(--space-8) 0 0; font-family: var(--font-mono); font-size: 14px; line-height: 20px; color: var(--color-fg-muted); font-variant-ligatures: none; }
+.cv-hero__lead { margin: var(--space-16) 0 0; font-size: 18px; line-height: 28px; max-width: var(--layout-measure-max, 68ch); }
+.cv-hero__contact, .cv-hero .cv-contact { margin-top: var(--space-16); }
+.cv-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-12); margin-top: var(--space-24); }
+.cv-hero__photo { flex: none; width: var(--layout-photo, 96px); height: var(--layout-photo, 96px); object-fit: cover; border-radius: var(--radius-4); }
+.cv-hero__photo--round { border-radius: 50%; }
+:lang(en) .cv-hero__photo:not(.cv-hero__photo--show) { display: none; }
+@media (min-width: 1024px) { .cv-hero__photo { width: var(--layout-photo-desktop, 120px); height: var(--layout-photo-desktop, 120px); } }
+@media (max-width: 639px) { .cv-hero__name { font-size: 30px; line-height: 36px; } }
+
+/* 4.4 Przełącznik języka */
+.cv-lang { display: inline-flex; align-items: center; gap: var(--space-8); margin: 0; padding: 0; list-style: none; font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-variant-ligatures: none; }
+.cv-lang a { color: var(--color-fg-subtle); text-decoration: none; transition: color var(--duration-hover, 150ms); }
+.cv-lang a:hover { color: var(--color-fg); }
+.cv-lang a[aria-current], .cv-lang a.is-active {
+  color: var(--color-fg);
+  text-decoration: underline;
+  text-decoration-thickness: var(--line-lang-underline, 2px);
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: var(--line-underline-offset, 3px);
+}
+.cv-lang__sep { color: var(--color-fg-subtle); }
+@media (max-width: 1023px) { .cv-lang a { padding: var(--space-12) 0; } }
+
+/* 4.5 Nawigacja */
+.cv-nav { margin: 0; padding: 0; list-style: none; font-size: 15px; line-height: 20px; font-weight: 500; }
+.cv-nav a { display: block; padding: var(--space-4) 0; color: var(--color-fg-muted); text-decoration: none; transition: color var(--duration-hover, 150ms); }
+.cv-nav a:hover, .cv-nav a[aria-current], .cv-nav a.is-active { color: var(--color-fg); }
+@media (max-width: 1023px) {
+  .cv-nav { display: flex; flex-wrap: wrap; gap: 0 var(--space-24); }
+  .cv-nav a { padding: var(--space-12) 0; }
+}
+
+/* 4.6 Nagłówek sekcji */
+.cv-section { margin-top: var(--space-64); }
+.cv-section--first { margin-top: 0; }
+.cv-section__title {
+  margin: 0 0 var(--space-24);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-variant-ligatures: none;
+}
+@media (max-width: 639px) { .cv-section { margin-top: var(--space-48); } }
+
+/* 4.7 Wpis doświadczenia */
+.cv-entry { display: grid; grid-template-columns: var(--layout-date-column, 17ch) minmax(0, 1fr); column-gap: var(--space-24); break-inside: avoid; }
+.cv-entry + .cv-entry { margin-top: var(--space-32); }
+.cv-entry__dates { padding-top: 2px; font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-variant-numeric: tabular-nums; font-variant-ligatures: none; color: var(--color-fg-subtle); white-space: nowrap; }
+.cv-entry__title { margin: 0; font-size: 17px; line-height: 24px; font-weight: 600; }
+.cv-entry__org { margin: var(--space-4) 0 0; font-family: var(--font-mono); font-size: 14px; line-height: 20px; color: var(--color-fg-muted); font-variant-ligatures: none; }
+.cv-entry__body { margin: var(--space-8) 0 0; max-width: var(--layout-measure-max, 68ch); }
+.cv-entry__body p { margin: 0; }
+.cv-entry__body ul { margin: 0; padding-left: var(--space-16); }
+.cv-entry__body li + li { margin-top: var(--space-4); }
+.cv-entry__tags { margin-top: var(--space-12); }
+@media (max-width: 639px) { .cv-entry { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-4); } }
+
+/* 4.8 Wpis projektu / open source */
+.cv-project { break-inside: avoid; }
+.cv-project + .cv-project { margin-top: var(--space-32); }
+.cv-project__title { margin: 0; font-size: 17px; line-height: 24px; font-weight: 600; }
+.cv-project__desc { margin: var(--space-4) 0 0; max-width: var(--layout-measure-max, 68ch); }
+.cv-project__stat { margin: var(--space-4) 0 0; font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-variant-numeric: tabular-nums; font-variant-ligatures: none; color: var(--color-fg-subtle); }
+.cv-project__tags { margin-top: var(--space-12); }
+.cv-project__image { display: block; margin-top: var(--space-16); border-radius: var(--radius-4); }
+@media (min-width: 1024px) { .cv-project__image--breakout { max-width: none; } }
+
+/* 4.9 Tag */
+.cv-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.cv-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  font-variant-ligatures: none;
+  color: var(--color-fg-muted);
+  background: var(--color-surface);
+  padding: 2px var(--space-8);
+  border: 0;
+  border-radius: var(--radius-4);
+}
+
+/* 4.10 Grupa umiejętności */
+.cv-skills + .cv-skills { margin-top: var(--space-32); }
+.cv-skills__title { margin: 0 0 var(--space-8); font-size: 17px; line-height: 24px; font-weight: 600; }
+.cv-skills__note { margin: 0 0 var(--space-8); max-width: var(--layout-measure-max, 68ch); }
+
+/* 4.12 Przyciski (tylko dwa i tylko w hero) */
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 10px var(--space-16);
+  border: var(--line-rule, 1px) solid transparent;
+  border-radius: var(--radius-4);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color var(--duration-hover, 150ms);
+}
+.cv-btn--primary { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+.cv-btn--primary:hover { text-decoration: underline; text-underline-offset: var(--line-underline-offset, 3px); }
+.cv-btn--secondary { background: transparent; color: var(--color-fg); border-color: var(--color-rule); }
+.cv-btn--secondary:hover { border-color: var(--color-fg); }
+
+/* 4.13 Drobny druk */
+.cv-fine { margin: var(--space-64) 0 0; font-size: 12px; line-height: 18px; color: var(--color-fg-subtle); max-width: var(--layout-measure-max, 68ch); }
+.cv-fine p { margin: 0; }
+.cv-fine p + p { margin-top: var(--space-8); }
+
+/* 4.14 Stopka / kolofon */
+.cv-colophon { margin: var(--space-32) 0 0; font-family: var(--font-mono); font-size: 13px; line-height: 16px; color: var(--color-fg-subtle); font-variant-ligatures: none; overflow-wrap: anywhere; }
+.cv-colophon p { margin: 0; }
+
+/* 4.15 Przełącznik motywu */
+.cv-theme { display: inline-flex; align-items: center; gap: var(--space-4); margin: 0; padding: 0; border: 0; background: none; font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-variant-ligatures: none; color: var(--color-fg-subtle); cursor: pointer; transition: color var(--duration-hover, 150ms); }
+.cv-theme:hover { color: var(--color-fg); }
+.cv-theme__icon { width: 16px; height: 16px; }
+@media (max-width: 1023px) { .cv-theme { padding: var(--space-12) 0; } }
+
+/* 4.16 Kod */
+.cv-code { font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-variant-ligatures: none; background: var(--color-surface); padding: 1px var(--space-4); border-radius: var(--radius-3); }
+.cv-codeblock {
+  margin: var(--space-16) 0;
+  padding: 0 0 0 var(--space-16);
+  border: 0;
+  border-left: var(--line-rule, 1px) solid var(--color-rule);
+  background: none;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 20px;
+  font-variant-ligatures: normal;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* 5 Układ strony */
+.cv-page { margin: 0 auto; padding: var(--layout-margin-desktop, 64px); }
+.cv-rail { margin-bottom: var(--space-48); }
+.cv-rail > * + * { margin-top: var(--space-24); }
+.cv-rail__name { margin: 0; font-size: 17px; line-height: 24px; font-weight: 600; }
+.cv-rail__switches { display: flex; flex-wrap: wrap; gap: var(--space-24); }
+.cv-main { max-width: var(--layout-content-max, 640px); }
+.cv-main > .cv-section:first-child { margin-top: 0; }
+.cv-top { display: inline-block; margin-top: var(--space-32); font-size: 15px; line-height: 20px; font-weight: 500; }
+@media (min-width: 1024px) {
+  .cv-page { display: grid; grid-template-columns: var(--layout-rail, 260px) minmax(0, 1fr); column-gap: 0; align-items: start; }
+  .cv-rail { margin-bottom: 0; padding-right: var(--layout-gutter, 48px); }
+  .cv-rail__switches { flex-direction: column; gap: var(--space-8); }
+  .cv-main { border-left: var(--line-rule, 1px) solid var(--color-rule); padding-left: var(--layout-gutter, 48px); max-width: none; }
+  .cv-main > * { max-width: var(--layout-content-max, 640px); }
+  .cv-top { display: none; }
+}
+@media (min-width: 1024px) and (min-height: 700px) { .cv-rail { position: sticky; top: var(--layout-rail-top, 32px); } }
+@media (min-width: 1440px) { .cv-page { max-width: calc(var(--layout-container-max, 1080px) + 2 * var(--layout-margin-desktop, 64px)); } }
+@media (max-width: 639px) { .cv-page { padding: var(--layout-margin-mobile, 20px); } }
+
+/* 5.1 Druk / PDF (A4) */
+@media print {
+  @page { size: A4; margin: 18mm 20mm; }
+  :root { --color-bg: #ffffff; --color-fg: #000000; --color-fg-muted: #000000; --color-fg-subtle: #000000; --color-rule: #000000; --color-surface: #ffffff; --color-accent: #000000; --color-accent-hover: #000000; --color-focus: #000000; }
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 15pt; }
+  .cv-page { display: block; padding: 0; max-width: none; }
+  .cv-rail { position: static; padding: 0; margin: 0 0 var(--space-24); border: 0; }
+  .cv-rail > * + * { margin-top: var(--space-8); }
+  .cv-nav, .cv-lang, .cv-theme, .cv-btn, .cv-hero__actions, .cv-top, .cv-rail__name { display: none !important; }
+  .cv-main { border: 0; padding: 0; max-width: none; }
+  .cv-main > * { max-width: none; }
+  .cv-hero__name { font-size: 22pt; line-height: 1.15; }
+  .cv-hero__lead { font-size: 10.5pt; line-height: 15pt; }
+  .cv-section { margin-top: var(--space-24); }
+  .cv-section__title { font-size: 13pt; line-height: 1.3; margin-bottom: var(--space-12); break-after: avoid; }
+  .cv-entry__title, .cv-project__title, .cv-skills__title { font-size: 11pt; line-height: 1.3; }
+  .cv-entry__dates, .cv-entry__org, .cv-project__stat, .cv-contact, .cv-hero__role { font-size: 9.5pt; line-height: 1.4; }
+  .cv-entry, .cv-project, .cv-skills { break-inside: avoid; }
+  .cv-entry + .cv-entry, .cv-project + .cv-project, .cv-skills + .cv-skills { margin-top: var(--space-16); }
+  :lang(en) .cv-hero__photo { display: none !important; }
+  a, .cv-link, .cv-prose a, .cv-contact a { color: #000; text-decoration: underline; }
+  a[href^="http"]:not(.cv-wordmark)::after { content: " (" attr(href) ")"; font-family: var(--font-mono); font-size: 9pt; }
+  .cv-tags { display: inline; }
+  .cv-tag { display: inline; background: none; padding: 0; border-radius: 0; font-size: 9.5pt; }
+  .cv-tag + .cv-tag::before { content: ", "; }
+  .cv-fine { margin-top: var(--space-24); font-size: 9.5pt; line-height: 1.4; }
+  .cv-colophon { margin-top: var(--space-16); font-size: 9.5pt; }
+}
